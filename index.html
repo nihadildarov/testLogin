@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat Interface</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Kassa Gəlir Formu</h1>
+    <form id="chatForm">
+      <div class="input-group">
+        <!--        <input type="text" id="username" placeholder="Ad Soyad" required>-->
+        <select id="username" required>
+          <option value="" disabled selected>Əməkdaşın adı</option>
+          <option value="Kəmalə">Kəmalə</option>
+          <option value="Aytən">Aytən</option>
+          <option value="Səma">Səma</option>
+          <option value="Elnurə">Elnurə</option>
+          <option value="Cəfər">Cəfər</option>
+          <option value="Zarina">Zarina</option>
+          <option value="Leyla">Leyla</option>
+          <option value="Zibeydə">Zibeydə</option>
+          <option value="Şəbnəm">Şəbnəm</option>
+        </select>
+        
+        <input type="text" id="date" placeholder="Choose a date" required>
+        <select id="product" required>
+          <option value="" disabled selected>Məhsul istəyi</option>
+          <option value="tort">Tort</option>
+          <option value="ekskluziv">Ekskluziv</option>
+          <option value="vitrin">Vitrin</option>
+        </select>
+        <textarea id="message" placeholder="Mesajınız..." required></textarea>
+        <button type="submit">Send</button>
+      </div>
+    </form>
+  </div>
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script>
+    flatpickr("#date", {
+        dateFormat: "Y-m-d",   // Set the format to yyyy-mm-dd
+        allowInput: true,      // Allows manual input
+        clickOpens: true,      // Ensure it opens on click
+        onChange: function(selectedDates, dateStr, instance) {
+            instance.close();  // Close calendar after date selection
+        }
+    });
+  </script>
+</body>
+
+</html>
